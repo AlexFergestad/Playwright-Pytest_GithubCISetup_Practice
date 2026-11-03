@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <title>Cube a Number</title>
 </head>
 <body>
-    <h1>Welcome to your new index.html file!</h1>
-    <p>Start adding your content, links, and text right here.</p>
+
+    <h2>Cube a Number</h2>
+    
+    <label for="numberInput">Enter a number: </label>
+    <input type="number" id="numberInput" placeholder="Type a number">
+    
+    <button onclick="cubeNumber()">Cube</button>
+    
+    <p>Result: <span id="result">--</span></p>
+
+    <script>
+        function cubeNumber() {
+            const num = parseFloat(document.getElementById('numberInput').value);
+            if (!isNaN(num)) {
+                const cubed = Math.pow(num, 3); // or num * num * num
+                document.getElementById('result').textContent = cubed;
+            } else {
+                document.getElementById('result').textContent = 'Please enter a valid number';
+            }
+        }
+    </script>
+
 </body>
 </html>
